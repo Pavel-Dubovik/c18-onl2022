@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Task2 {
     public static void main(String[] args) {
-        Scanner console = new Scanner(System.in);
+        /*Scanner console = new Scanner(System.in);
         System.out.println("Введите количество значений:");
         int n = console.nextInt();
         int count = 0;
@@ -14,6 +14,15 @@ public class Task2 {
                 count = count + 1;
             }
         }
-        System.out.println("Количество положительных чисел = " + count);
+        System.out.println("Количество положительных чисел = " + count);*/
+
+        int count = 0;
+        for (String arg : args) {
+            int value = Integer.parseInt(arg);
+            if (value > 0) {
+                count = count + 1;
+            }
+        }
+        System.out.println(count);
     }
 }
