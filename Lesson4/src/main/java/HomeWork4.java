@@ -93,7 +93,7 @@ public class HomeWork4 {
         String dou = "double";
         String bool = "boolean";
         System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", " ", by, sh, ch, in, lo, fl, dou, bool);
-        System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", by, t, nya, nya, nya, nya, nya, nya, no);
+        System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", by, t, nya, ya, nya, nya, nya, nya, no);
         System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", sh, ya, t, ya, nya, nya, nya, nya, no);
         System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", ch, ya, ya, t, nya, nya, nya, nya, no);
         System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", in, ya, ya, ya, t, nya, nya, nya, no);
