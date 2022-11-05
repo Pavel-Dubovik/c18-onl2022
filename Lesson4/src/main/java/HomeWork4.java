@@ -9,6 +9,11 @@ public class HomeWork4 {
             ch++;
         }
 */
+        char ch = 'a';
+        while (ch <= 'z') {
+            System.out.print(ch + " ");
+            ch++;
+        }
 
 
         //2)Проверка четности числа
@@ -75,7 +80,7 @@ public class HomeWork4 {
 //    т  - если преобразование тождественно.
 //    Внимание! используйте System.out.printLn
 
-        String nya = "ня";
+        /*String nya = "ня";
         String ya = "я";
         String no = "х";
         String t = "т";
@@ -95,7 +100,7 @@ public class HomeWork4 {
         System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", lo, ya, ya, ya, ya, t, nya, nya, no);
         System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", fl, ya, ya, ya, ya, ya, t, nya, no);
         System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", dou, ya, ya, ya, ya, ya, ya, t, no);
-        System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", bool, no, no, no, no, no, no, no, t);
+        System.out.printf("%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s\n", bool, no, no, no, no, no, no, no, t);*/
 
 
     }
