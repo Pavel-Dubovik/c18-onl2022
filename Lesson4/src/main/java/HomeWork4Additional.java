@@ -10,12 +10,12 @@ public class HomeWork4Additional {
         foobar(6);
         foobar(10);
         foobar(15);
-        countDevs(101);
-        countDevs(102);
-        countDevs(53);
-        countDevs(344);
-        countDevs(55);
-        countDevs(976);
+        countDevs(1);
+        countDevs(11);
+        countDevs(12);
+        countDevs(313);
+        countDevs(514);
+        countDevs(221);
         countDevs(68);
         countDevs(679);
         countDevs(410);
@@ -23,14 +23,26 @@ public class HomeWork4Additional {
 
     }
 
+    /**
+     * Необходимо прочитать с консоли значение числа типа int,
+     * сделать проверку что если пользователь ввел не положительное число,
+     * то вывести ошибку и отправить пользователя вводить заново новое число!
+     * далее создать одномерный массив типа int размера прочитанного с консоли
+     * далее заполнить массив случайными значениями
+     * далее вывести массив на консоль
+     */
+
     public static int[] printArray() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a positive number:");
-        int number = scanner.nextInt();
-        while (number < 0) {
-            System.out.println("Mistake! Enter a positive number:");
+        int number;
+        do {
+            System.out.println("Enter a positive number:");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Mistake! Enter a positive number:");
+                scanner.next();
+            }
             number = scanner.nextInt();
-        }
+        } while (number < 0);
 
         int[] array = new int[number];
         Random random = new Random();
@@ -83,7 +95,7 @@ public class HomeWork4Additional {
      * @param count - количество программистов
      */
     public static void countDevs(int count) {
-        if (count % 10 == 0 || count % 10 == 5 || count % 10 == 6 || count % 10 == 7 || count % 10 == 8 || count % 10 == 9) {
+        if (count % 10 == 0 || count % 10 == 5 || count % 10 == 6 || count % 10 == 7 || count % 10 == 8 || count % 10 == 9 || count % 100 == 11 || count % 100 == 12 || count % 100 == 13 || count % 100 == 14) {
             System.out.println(count + " программистов");
         } else if (count % 10 == 2 || count % 10 == 3 || count % 10 == 4) {
             System.out.println(count + " программиста");
