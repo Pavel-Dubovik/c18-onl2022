@@ -3,25 +3,45 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class HomeWork5Additional {
+    public static final int JANUARY = 1;
+    public static final int FEBRUARY = 2;
+    public static final int MARCH = 3;
+    public static final int APRIL = 4;
+    public static final int MAY = 5;
+    public static final int JUNE = 6;
+    public static final int JULY = 7;
+    public static final int AUGUST = 8;
+    public static final int SEPTEMBER = 9;
+    public static final int OCTOBER = 10;
+    public static final int NOVEMBER = 11;
+    public static final int DESEMBER = 12;
+
     public static void main(String[] args) {
-        //printDay();
-        //calculateAmoeba();
-        //printNumber(-3000);
-        //identifyTheZodiacSign(11, 10);
-        //summ(9,9);
-        /*arrayA();
+        printDay();
+        calculateAmoeba();
+        printNumber(0);
+        printNumber(-4);
+        printNumber(55);
+        identifyTheZodiacSign(11, 10);
+        System.out.println(summ(1, 3));
+        System.out.println(summ(-1, -3));
+        System.out.println(summ(-1, 3));
+        System.out.println(summ(1, -3));
+        System.out.println(summ(0, 1));
+        System.out.println(summ(1, 0));
+        arrayA();
         arrayB();
         arrayC();
-        arrayD();*/
-        //reverseArray();
-        //randomMaxValue();
-        //replaceElement();
-        //findMaxValue();
-        //checkArrayElements(new int[]{1, 3, 7, 4, 7, 9, 5, 9});
-        //transposeTheMatrix();
-        //calculateSumOfDiagonalElements();
-        //printTheModifiedMatrix();
-        getSumAndIndexes();
+        arrayD();
+        reverseArray();
+        randomMaxValue();
+        replaceElement();
+        findMaxValue();
+        checkArrayElements(new int[]{1, 3, 7, 4, 7, 9, 5, 9});
+        transposeTheMatrix();
+        calculateSumOfDiagonalElements();
+        printTheModifiedMatrix();
+        printSumAndIndexes();
     }
 
     /**
@@ -35,12 +55,12 @@ public class HomeWork5Additional {
         int number = (int) (Math.random() * 7) + 1;
         System.out.println(
                 switch (number) {
-                    case 1 -> ("Monday");
-                    case 2 -> ("Tuesday");
-                    case 3 -> ("Wednesday");
-                    case 4 -> ("Thursday");
-                    case 5 -> ("Friday");
-                    case 6, 7 -> ("Weekend");
+                    case 1 -> "Monday";
+                    case 2 -> "Tuesday";
+                    case 3 -> "Wednesday";
+                    case 4 -> "Thursday";
+                    case 5 -> "Friday";
+                    case 6, 7 -> "Weekend";
                     default -> throw new IllegalStateException("Unexpected value: " + number);
                 }
         );
@@ -67,16 +87,18 @@ public class HomeWork5Additional {
      */
 
     public static void printNumber(int number) {
-        int temp = 1;
-        int length = 0;
-        while (temp <= Math.abs(number)) {
+        int temp = number;
+        int length = 1;
+        while (temp != 0) {
             length++;
             temp *= 10;
         }
-        if (number >= 0) {
+        if (number > 0) {
             System.out.println(number + " - is a positive number, quantity digits = " + length);
-        } else {
+        } else if (number < 0) {
             System.out.println(number + " - is a negative number, quantity digits = " + length);
+        } else {
+            System.out.println(number + " - is a 0, quantity digits = " + length);
         }
     }
 
@@ -174,17 +196,46 @@ public class HomeWork5Additional {
         }
     }
 
+    public boolean checkDay(int day, int from, int to) {
+        return day >= from && day <= to;
+    }
+
+    public String identifyTheZodiacSignSolution2(int month, int day) {
+        return switch (month) {
+            case JANUARY -> checkDay(day, 1, 19) ? "Козерог" : checkDay(day, 20, 31) ? "Водолей" : null;
+            case FEBRUARY -> checkDay(day, 1, 18) ? "Водолей" : checkDay(day, 19, 28) ? "Рыбы" : null;
+            case MARCH -> checkDay(day, 1, 20) ? "Рыбы" : checkDay(day, 21, 31) ? "Овен" : null;
+            case APRIL -> checkDay(day, 1, 19) ? "Овен" : checkDay(day, 20, 30) ? "Телец" : null;
+            case MAY -> checkDay(day, 1, 20) ? "Телец" : checkDay(day, 21, 31) ? "Близнецы" : null;
+            case JUNE -> checkDay(day, 1, 20) ? "Близнецы" : checkDay(day, 21, 30) ? "Рак" : null;
+            case JULY -> checkDay(day, 1, 22) ? "Рак" : checkDay(day, 23, 31) ? "Лев" : null;
+            case AUGUST -> checkDay(day, 1, 22) ? "Лев" : checkDay(day, 23, 31) ? "Дева" : null;
+            case SEPTEMBER -> checkDay(day, 1, 22) ? "Дева" : checkDay(day, 23, 30) ? "Весы" : null;
+            case OCTOBER -> checkDay(day, 1, 22) ? "Весы" : checkDay(day, 23, 31) ? "Скорпион" : null;
+            case NOVEMBER -> checkDay(day, 1, 21) ? "Скорпион" : checkDay(day, 22, 30) ? "Стрелец" : null;
+            case DESEMBER -> checkDay(day, 1, 21) ? "Стрелец" : checkDay(day, 22, 30) ? "Козерог" : null;
+            default -> null;
+        };
+    }
+
     /**
      * 5) Напишите реализацию метода summ(int a, int b), вычисляющий a*b, не пользуясь операцией
      * умножения, где a и b целые числа, вызовите метод summ  в методе main и распечатайте на консоль.
      */
-    public static void summ(int a, int b) {
-        int sum = 0;
-        for (int i = 1; i <= b; i++) {
-            sum += a;
+    public static int summ(int a, int b) {
+        int result = 0;
+        for (int i = 0; i < Math.abs(b); i++) {
+            result += Math.abs(a);
         }
-        System.out.println(sum);
+        if ((a < 0 && b < 0) || (a > 0 && b > 0)) {
+            return result;
+        } else if (a < 0 || b < 0) {
+            return -result;
+        } else {
+            return 0;
+        }
     }
+
 
     /**
      * //        6) Дан двухмерный массив размерностью 4 на 4, необходимо нарисовать четыре треугольника вида
@@ -534,7 +585,7 @@ public class HomeWork5Additional {
      * *Пояснение. Первое число - сумма тройки  [2789, 4, 8742]. Числа в скобках это 0 строка и 5 столбец - индекс первого элемента тройки, то есть индекс числа 2789.
      */
 
-    public static void getSumAndIndexes() {
+    public static void printSumAndIndexes() {
         int[][] matrix = new int[10][10];
         Random random = new Random();
         for (int i = 0; i < matrix.length; i++) {
@@ -575,8 +626,4 @@ public class HomeWork5Additional {
             System.out.println("Maximum amount: " + maxSum + " (" + rowIndex + ", " + columnIndex + ")");
         }
     }
-
 }
-
-
-
