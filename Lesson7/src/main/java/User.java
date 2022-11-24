@@ -1,8 +1,8 @@
 public class User {
-    public String firstName;
-    public String secondName;
-    public int age;
-    public String gender;
+    private String firstName;
+    private String secondName;
+    private int age;
+    private String gender;
 
     public User() {
     }
@@ -46,7 +46,7 @@ public class User {
                 '}';
     }
 
-    public String getFullName(String firstName, String secondName) {
+    public String getFullName() {
         return firstName + " " + secondName;
     }
 

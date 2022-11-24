@@ -12,9 +12,9 @@ public class Computer {
     private String processor;
     private String ram;
     private String hardDrive;
-    public int resource;
-    private Scanner scanner = new Scanner(System.in);
-    private Random random = new Random();
+    private int resource;
+    private final Scanner scanner = new Scanner(System.in);
+    private final Random random = new Random();
     private boolean burned;
 
     public Computer(String processor, String ram, String hardDrive, int resource) {
@@ -30,22 +30,27 @@ public class Computer {
 
     public void on() {
         if (!burned) {
-            int enteredNumber = enterNumber();
-            int count = 0;//random.nextInt(2);
-            if (enteredNumber == count) {
-                off();
+            int count = random.nextInt(2);
+            if (resource != 0 && enterNumber() == count) {
+                return;
             } else {
-                System.out.println("The computer burned down!");
                 burned = true;
             }
-        } else {
-            System.out.println("The computer burned down!");
         }
     }
 
-    private void off() {
-        System.out.println("Turning off the computer");
-        this.resource--;
+    private void burned() {
+        System.out.println("The computer burned down!");
+        burned = true;
+    }
+
+    public void off() {
+        if (!burned && resource != 0) {
+            System.out.println("Turning off the computer");
+            resource--;
+        } else {
+            burned();
+        }
     }
 
     private int enterNumber() {
@@ -60,6 +65,10 @@ public class Computer {
             }
         } while (number < 0 || number > 1);
         return number;
+    }
+
+    public boolean isBurned() {
+        return burned;
     }
 
     @Override

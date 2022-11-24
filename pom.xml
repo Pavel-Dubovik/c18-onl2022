@@ -36,5 +36,7 @@
         <module>Lesson4</module>
         <module>Lesson5</module>
         <module>Lesson7</module>
+        <module>Lesson8</module>
+        <module>tictactoe</module>
     </modules>
 </project>

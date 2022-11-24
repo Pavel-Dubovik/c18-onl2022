@@ -40,6 +40,10 @@ public class Main {
         System.out.println(computer1);
         for (int i = 0; i < 10; i++) {
             computer1.on();
+            computer1.off();
+            if (computer1.isBurned()) {
+                break;
+            }
         }
     }
 }
