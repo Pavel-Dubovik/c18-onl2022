@@ -23,8 +23,8 @@ public class Main {
         User user4 = new User(35, "Pavel");
         System.out.println(user4);
 
-        User user5 = new User();
-        System.out.println(user5.getFullName("Pavel", "Dubovik"));
+        User user5 = new User("Pavel", "Dubovik");
+        System.out.println(user5.getFullName());
 
         user5.increaseAge(35);
         System.out.println(user5);
