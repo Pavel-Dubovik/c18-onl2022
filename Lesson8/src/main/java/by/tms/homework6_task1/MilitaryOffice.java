@@ -19,16 +19,49 @@ public class MilitaryOffice {
      * 5) Создать класс Main, наполнить by.tms.homework6_task1.PersonRegistry людьми, по желанию можно создавать людей через консоль
      */
 
+    private PersonRegistry personRegistry;
+    private final int MIN_AGE = 18;
+    private final int MAX_AGE = 27;
 
-    private MilitaryOffice() {
-        Person[] personRegistry = new Person[20];
-        personRegistry[0] = new Person()
-        for (int i = 0; i < personRegistry.length; i++) {
+    public MilitaryOffice(PersonRegistry personRegistry) {
+        this.personRegistry = personRegistry;
+    }
 
+    public void printEligibleRecruits(String gender) {
+        for (int i = 0; i < personRegistry.getPersons().length; i++) {
+            if (personRegistry.getPersons()[i].getGender().equals(gender) && personRegistry.getPersons()[i].getAge() >= MIN_AGE && personRegistry.getPersons()[i].getAge() <= MAX_AGE) {
+                System.out.println(personRegistry.getPersons()[i]);
+            }
         }
     }
 
-    private void printGodnye() {
-        if (PersonRegistry.)
+    public void printCity(String city) {
+        int quantity = 0;
+        for (int i = 0; i < personRegistry.getPersons().length; i++) {
+            if (personRegistry.getPersons()[i].getAddress().getCity().equals(city)) {
+                quantity++;
+            }
+        }
+        System.out.println(quantity);
+    }
+
+    public void printAge(int ageMin, int ageMax) {
+        int quantity = 0;
+        for (int i = 0; i < personRegistry.getPersons().length; i++) {
+            if (personRegistry.getPersons()[i].getAge() >= ageMin && personRegistry.getPersons()[i].getAge() <= ageMax) {
+                quantity++;
+            }
+        }
+        System.out.println(quantity);
+    }
+
+    public void printName(String name) {
+        int quantity = 0;
+        for (int i = 0; i < personRegistry.getPersons().length; i++) {
+            if (personRegistry.getPersons()[i].getName().equals(name)) {
+                quantity++;
+            }
+        }
+        System.out.println(quantity);
     }
 }

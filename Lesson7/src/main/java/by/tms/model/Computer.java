@@ -32,7 +32,7 @@ public class Computer {
         if (!burned) {
             int count = random.nextInt(2);
             if (resource != 0 && enterNumber() == count) {
-                return;
+                System.out.println("The computer turned on");
             } else {
                 burned = true;
             }
