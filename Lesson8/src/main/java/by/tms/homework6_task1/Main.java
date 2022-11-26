@@ -1,8 +1,9 @@
 package by.tms.homework6_task1;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        // MilitaryOffice militaryOffice1 = new MilitaryOffice()
         Person[] mens = new Person[20];
         mens[0] = new Person("Вячеслав", 18, "мужчина", new Address("Беларусь", "Минск"));
         mens[1] = new Person("Олег", 25, "мужчина", new Address("Беларусь", "Минск"));
@@ -27,10 +28,10 @@ public class Main {
 
 
         MilitaryOffice militaryOffice1 = new MilitaryOffice(new PersonRegistry(mens));
-        militaryOffice1.printEligibleRecruits("мужчина");
-        militaryOffice1.printCity("Минск");
-        militaryOffice1.printAge(25, 27);
-        militaryOffice1.printName("Александр");
+        System.out.println(Arrays.toString(militaryOffice1.findEligibleRecruits("мужчина")));
+        System.out.println(militaryOffice1.findRecruitsByCity("Минск"));
+        System.out.println(militaryOffice1.findRecruitsByAge(25, 27));
+        System.out.println(militaryOffice1.findRecruitsByName("Александр"));
 
     }
 }

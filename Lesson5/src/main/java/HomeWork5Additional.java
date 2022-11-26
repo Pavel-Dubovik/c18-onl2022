@@ -414,7 +414,6 @@ public class HomeWork5Additional {
      */
 
     public static void checkArrayElements(int[] array) {
-        int[] temp = new int[array.length];
         int[] result = new int[array.length];
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
@@ -423,7 +422,7 @@ public class HomeWork5Additional {
                 }
             }
         }
-        if (!(Arrays.equals(temp, result))) {
+        if (!(Arrays.equals(array, result))) {
             System.out.print("The array has duplicate elements: ");
             for (int i = 0; i < result.length; i++) {
                 if (result[i] != 0) {

@@ -27,41 +27,45 @@ public class MilitaryOffice {
         this.personRegistry = personRegistry;
     }
 
-    public void printEligibleRecruits(String gender) {
+    public Person[] findEligibleRecruits(String gender) {
+        Person[] result = new Person[personRegistry.getPersons().length];
         for (int i = 0; i < personRegistry.getPersons().length; i++) {
-            if (personRegistry.getPersons()[i].getGender().equals(gender) && personRegistry.getPersons()[i].getAge() >= MIN_AGE && personRegistry.getPersons()[i].getAge() <= MAX_AGE) {
-                System.out.println(personRegistry.getPersons()[i]);
+            Person person = personRegistry.getPersons()[i];
+            if (person.getGender().equals(gender) && person.getAge() >= MIN_AGE && person.getAge() <= MAX_AGE) {
+                result[i] = person;
             }
         }
+        return result;
     }
 
-    public void printCity(String city) {
+    public int findRecruitsByCity(String city) {
         int quantity = 0;
         for (int i = 0; i < personRegistry.getPersons().length; i++) {
             if (personRegistry.getPersons()[i].getAddress().getCity().equals(city)) {
                 quantity++;
             }
         }
-        System.out.println(quantity);
+        return quantity;
     }
 
-    public void printAge(int ageMin, int ageMax) {
+    public int findRecruitsByAge(int ageMin, int ageMax) {
         int quantity = 0;
         for (int i = 0; i < personRegistry.getPersons().length; i++) {
-            if (personRegistry.getPersons()[i].getAge() >= ageMin && personRegistry.getPersons()[i].getAge() <= ageMax) {
+            Person person = personRegistry.getPersons()[i];
+            if (person.getAge() >= ageMin && person.getAge() <= ageMax) {
                 quantity++;
             }
         }
-        System.out.println(quantity);
+        return quantity;
     }
 
-    public void printName(String name) {
+    public int findRecruitsByName(String name) {
         int quantity = 0;
         for (int i = 0; i < personRegistry.getPersons().length; i++) {
             if (personRegistry.getPersons()[i].getName().equals(name)) {
                 quantity++;
             }
         }
-        System.out.println(quantity);
+        return quantity;
     }
 }
