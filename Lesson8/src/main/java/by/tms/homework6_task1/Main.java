@@ -27,11 +27,11 @@ public class Main {
         mens[19] = new Person("Антон", 28, "мужчина", new Address("Беларусь", "Минск"));
 
 
-        MilitaryOffice militaryOffice1 = new MilitaryOffice(new PersonRegistry(mens));
-        System.out.println(Arrays.toString(militaryOffice1.findEligibleRecruits("мужчина")));
-        System.out.println(militaryOffice1.findRecruitsByCity("Минск"));
-        System.out.println(militaryOffice1.findRecruitsByAge(25, 27));
-        System.out.println(militaryOffice1.findRecruitsByName("Александр"));
+        MilitaryOffice militaryOffice = new MilitaryOffice(new PersonRegistry(mens));
+        System.out.println(Arrays.toString(militaryOffice.findEligibleRecruits("мужчина")));
+        System.out.println(militaryOffice.findRecruitsByCity("Минск"));
+        System.out.println(militaryOffice.findRecruitsByAge(25, 27));
+        System.out.println(militaryOffice.findRecruitsByName("Александр"));
 
     }
 }
