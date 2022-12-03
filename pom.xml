@@ -38,5 +38,7 @@
         <module>Lesson7</module>
         <module>Lesson8</module>
         <module>tictactoe</module>
+        <module>AddHomework_Arrays</module>
+        <module>Lesson9</module>
     </modules>
 </project>
