@@ -25,7 +25,7 @@ public class Transport {
     }
 
     public double convertToKilowatt(double power) {
-        return power *= 0.74;
+        return power * 0.74;
     }
 
 }

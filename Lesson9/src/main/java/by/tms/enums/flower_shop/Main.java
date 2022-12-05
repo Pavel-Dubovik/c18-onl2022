@@ -25,16 +25,10 @@ public class Main {
      */
     public static void main(String[] args) {
         FlowerMarket flowerMarket = new FlowerMarket();
-        Bouquet b1 = new Bouquet(flowerMarket.getBouquet(FlowerType.ROSE, FlowerType.ASTER, FlowerType.LILY));
-        Bouquet b2 = new Bouquet(flowerMarket.getBouquet(FlowerType.ROSE, FlowerType.CARNATION, FlowerType.LILY));
-        Bouquet b3 = new Bouquet(flowerMarket.getBouquet(FlowerType.GERBERA, FlowerType.TULIP, FlowerType.LILY));
-        Bouquet b4 = new Bouquet(flowerMarket.getBouquet(FlowerType.TULIP, FlowerType.ASTER, FlowerType.LILY));
-        Bouquet b5 = new Bouquet(flowerMarket.getBouquet(FlowerType.CARNATION, FlowerType.LILY, FlowerType.TULIP));
-
-        System.out.println(b1.calculateCostOfBouquet(b1.getFlowers()));
-        System.out.println(b2.calculateCostOfBouquet(b2.getFlowers()));
-        System.out.println(b3.calculateCostOfBouquet(b3.getFlowers()));
-        System.out.println(b4.calculateCostOfBouquet(b4.getFlowers()));
-        System.out.println(b5.calculateCostOfBouquet(b5.getFlowers()));
+        System.out.println(flowerMarket.getBouquet("ROSE", "ASTER", "LILY").calculateCostOfBouquet());
+        System.out.println(flowerMarket.getBouquet("ROSE", "CARNATION", "LILY").calculateCostOfBouquet());
+        System.out.println(flowerMarket.getBouquet("GERBERA", "TULIP", "LILY").calculateCostOfBouquet());
+        System.out.println(flowerMarket.getBouquet("TULIP", "ASTER", "LILY").calculateCostOfBouquet());
+        System.out.println(flowerMarket.getBouquet("CARNATION", "LILY", "TULIP").calculateCostOfBouquet());
     }
 }
