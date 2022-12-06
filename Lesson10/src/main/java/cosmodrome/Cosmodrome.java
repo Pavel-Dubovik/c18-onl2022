@@ -4,14 +4,13 @@ public class Cosmodrome {
     private IStart aircraft;
 
     public void start(IStart aircraft) {
-        if (!aircraft.checkSystem()) {
-            System.out.println("Предстартовая проверка провалена");
-            return;
-        } else {
+        if (aircraft.checkSystem()) {
             aircraft.startEngine();
+            countdown();
+            aircraft.start();
+        } else {
+            System.out.println("Предстартовая проверка провалена");
         }
-        countdown();
-        aircraft.start();
     }
 
     private void countdown() {

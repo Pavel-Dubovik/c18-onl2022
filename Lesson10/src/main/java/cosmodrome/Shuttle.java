@@ -5,11 +5,7 @@ public class Shuttle implements IStart {
     @Override
     public boolean checkSystem() {
         int randomNumber = (int) (Math.random() * 11);
-        if (randomNumber > 3) {
-            return true;
-        } else {
-            return false;
-        }
+        return randomNumber > 3;
     }
 
     @Override
