@@ -40,5 +40,6 @@
         <module>tictactoe</module>
         <module>AddHomework_Arrays</module>
         <module>Lesson9</module>
+        <module>Lesson10</module>
     </modules>
 </project>

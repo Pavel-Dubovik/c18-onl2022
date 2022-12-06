@@ -19,7 +19,7 @@ public class Bouquet {
     }
 
     // метод по вычислению стоимости
-    public double calculateCostOfBouquet(Flower[] flowers) {
+    public double calculateCostOfBouquet() {
         double totalCost = 0;
         for (int i = 0; i < flowers.length; i++) {
             totalCost += flowers[i].getFlowerType().getCost();
