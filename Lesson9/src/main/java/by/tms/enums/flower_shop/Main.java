@@ -1,5 +1,6 @@
 package by.tms.enums.flower_shop;
 
+import static by.tms.enums.flower_shop.Flower.getCount;
 public class Main {
     /**
      * Задача2: Цветочный магазин.
@@ -30,5 +31,6 @@ public class Main {
         System.out.println(flowerMarket.getBouquet("GERBERA", "TULIP", "LILY").calculateCostOfBouquet());
         System.out.println(flowerMarket.getBouquet("TULIP", "ASTER", "LILY").calculateCostOfBouquet());
         System.out.println(flowerMarket.getBouquet("CARNATION", "LILY", "TULIP").calculateCostOfBouquet());
+        System.out.println(getCount());
     }
 }
