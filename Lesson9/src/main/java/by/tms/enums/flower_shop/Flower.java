@@ -11,13 +11,14 @@ import lombok.ToString;
 public class Flower {
     private String name;
     private FlowerType flowerType;
+    private static int count;
 
     public Flower(FlowerType flowerType) {
         this.flowerType = flowerType;
+        count++;
     }
 
-    public Flower() {
+    public static int getCount() {
+        return count;
     }
-
-
 }

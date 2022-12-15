@@ -1,0 +1,45 @@
+package by.tms.task1;
+
+import by.tms.task1.model.Drum;
+import by.tms.task1.model.Guitar;
+import by.tms.task1.model.IInstrument;
+import by.tms.task1.model.Pipe;
+
+import static by.tms.task1.model.IInstrument.Type.*;
+
+public class Main {
+    public static void main(String[] args) {
+        /**
+         * Задача1:
+         *       Интерфейс Инструмент
+         *
+         *       1) Создать интерфейс Инструмент(внутри enum Type с перечислением типов инструментов) и реализующие его классы Гитара, Барабан и Труба.
+         *       2) Интерфейс Инструмент содержит метод play() и переменную String KEY ="До мажор".
+         *       3) Гитара содержит переменные класса количествоСтрун,  Барабан - размер, Труба - диаметр.
+         *       4) Создать массив типа Инструмент, содержащий инструменты разного типа.
+         *       5) Наполнять массив инструментами необходимо через метод createInstrument,
+         *       который на вход принимает Тип инструмента(enum) и создает конкретный инструмент.
+         *       6) В цикле вызвать метод play() для каждого инструмента, который должен выводить строку
+         *       "Играет такой-то инструмент, с такими-то характеристиками".
+         */
+
+        for (IInstrument iInstrument : createInstrument(GUITAR, DRUM, PIPE)) {
+            iInstrument.play();
+            System.out.println();
+        }
+    }
+
+    public static IInstrument[] createInstrument(IInstrument.Type... types) {
+        IInstrument[] instruments = new IInstrument[types.length];
+        for (int i = 0; i < types.length; i++) {
+            if (types[i] == GUITAR) {
+                instruments[i] = new Guitar();
+            } else if (types[i] == DRUM) {
+                instruments[i] = new Drum();
+            } else {
+                instruments[i] = new Pipe();
+            }
+        }
+        return instruments;
+    }
+}
