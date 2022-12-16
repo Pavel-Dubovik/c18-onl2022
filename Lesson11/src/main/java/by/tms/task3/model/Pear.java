@@ -1,5 +1,7 @@
 package by.tms.task3.model;
 
+import static by.tms.task3.model.FruitType.PEAR;
+
 public class Pear extends Fruit {
     public Pear(double weight, double price) {
         super(weight, price);
@@ -7,6 +9,6 @@ public class Pear extends Fruit {
 
     @Override
     public FruitType getType() {
-        return FruitType.PEAR;
+        return PEAR;
     }
 }

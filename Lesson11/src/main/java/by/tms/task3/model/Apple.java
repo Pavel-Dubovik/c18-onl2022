@@ -2,6 +2,8 @@ package by.tms.task3.model;
 
 import lombok.Getter;
 
+import static by.tms.task3.model.FruitType.APPLE;
+
 @Getter
 public class Apple extends Fruit {
     public Apple(double weight, double price) {
@@ -10,6 +12,6 @@ public class Apple extends Fruit {
 
     @Override
     public FruitType getType() {
-        return FruitType.APPLE;
+        return APPLE;
     }
 }
