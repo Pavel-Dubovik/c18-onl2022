@@ -23,13 +23,13 @@ public class Main {
          *       "Играет такой-то инструмент, с такими-то характеристиками".
          */
 
-        for (IInstrument iInstrument : createInstrument(GUITAR, DRUM, PIPE)) {
+        for (IInstrument iInstrument : createInstruments(GUITAR, DRUM, PIPE)) {
             iInstrument.play();
             System.out.println();
         }
     }
 
-    public static IInstrument[] createInstrument(IInstrument.Type... types) {
+    public static IInstrument[] createInstruments(IInstrument.Type... types) {
         IInstrument[] instruments = new IInstrument[types.length];
         for (int i = 0; i < types.length; i++) {
             if (types[i] == GUITAR) {
