@@ -33,11 +33,11 @@ public class Main {
         IInstrument[] instruments = new IInstrument[types.length];
         for (int i = 0; i < types.length; i++) {
             if (types[i] == GUITAR) {
-                instruments[i] = new Guitar();
+                instruments[i] = new Guitar(6);
             } else if (types[i] == DRUM) {
-                instruments[i] = new Drum();
+                instruments[i] = new Drum(50);
             } else {
-                instruments[i] = new Pipe();
+                instruments[i] = new Pipe(10);
             }
         }
         return instruments;

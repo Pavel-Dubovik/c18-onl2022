@@ -4,7 +4,11 @@ import lombok.Getter;
 
 @Getter
 public class Pipe implements IInstrument {
-    private final int diameter = 10;
+    private int diameter;
+
+    public Pipe(int diameter) {
+        this.diameter = diameter;
+    }
 
     @Override
     public void play() {

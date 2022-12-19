@@ -12,11 +12,9 @@ public class TextFormatter {
             String sLowerCase = word.toLowerCase();
             StringBuilder stringBuilder = new StringBuilder(sLowerCase);
             StringBuilder reverse = stringBuilder.reverse();
-            if ((reverse.toString()).equals(sLowerCase)) {
-                result = true;
-            }
+            return (reverse.toString()).equals(sLowerCase);
         }
-        return result;
+        return false;
     }
 
     public String getMiddleSigns(String str) {

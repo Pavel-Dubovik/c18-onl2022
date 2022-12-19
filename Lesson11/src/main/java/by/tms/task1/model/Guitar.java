@@ -4,7 +4,11 @@ import lombok.Getter;
 
 @Getter
 public class Guitar implements IInstrument {
-    private final int strings = 6;
+    private int strings;
+
+    public Guitar(int strings) {
+        this.strings = strings;
+    }
 
     @Override
     public void play() {

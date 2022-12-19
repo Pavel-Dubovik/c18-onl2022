@@ -27,7 +27,7 @@ public class Main {
 
         {
             System.out.println("--------------------------------------");
-            Pattern pattern = Pattern.compile("c.+?b");
+            Pattern pattern = Pattern.compile("c+ab");
             print(getSubstrings("cab, ccab, cccab", pattern));
         }
 
@@ -37,7 +37,7 @@ public class Main {
 
         {
             System.out.println("--------------------------------------");
-            Pattern pattern = Pattern.compile("J.+?\\d+");
+            Pattern pattern = Pattern.compile("Java\\s+[0-9]+");
             print(getSubstrings("Versions: Java  5, Java 6, Java   7, Java 8, Java 12.", pattern));
         }
 
@@ -60,7 +60,6 @@ public class Main {
             System.out.println("--------------------------------------");
             String str = "One two three раз два три one1 two2 123 ";
             System.out.println(str.split("\\s+|([а-яА-Я]+)|([a-zA-Z]+?\\d+)|(\\d+)").length);
-            System.out.println(Arrays.toString(str.split("\\s+|([а-яА-Я]+)|([a-zA-Z]+?\\d+)|(\\d+)")));
         }
 
         /**
@@ -76,7 +75,7 @@ public class Main {
 
         {
             System.out.println("--------------------------------------");
-            String str = "fre15";
+            String str = "q1555";
             System.out.println(validate(str));
         }
     }
@@ -110,9 +109,6 @@ public class Main {
     }
 
     public static boolean validate(String str) {
-        Pattern pattern = Pattern.compile("([a-z]+)(1*5*)(5*1*)");
-        Matcher matcher = pattern.matcher(str);
-        return str.length() >= 4 && str.length() <= 20 && matcher.matches();
+        return str.matches("[a-z15]{4,20}");
     }
-
 }
