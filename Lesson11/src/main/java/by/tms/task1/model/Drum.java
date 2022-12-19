@@ -4,7 +4,11 @@ import lombok.Getter;
 
 @Getter
 public class Drum implements IInstrument {
-    private final int size = 50;
+    private int size;
+
+    public Drum(int size) {
+        this.size = size;
+    }
 
     @Override
     public void play() {

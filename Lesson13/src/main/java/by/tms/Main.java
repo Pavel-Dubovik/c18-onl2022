@@ -55,7 +55,8 @@ public class Main {
         String text = "Как хорошо летом на море. Холодно. Хомяки спали весь день. В Москве случился потоп.";
         String[] sentences = text.split("\\.");
         for (String sentence : sentences) {
-            if (formatter.getNumberOfWords(sentence) >= 3 && formatter.getNumberOfWords(sentence) <= 5 || formatter.isPalindromeInString(sentences)) {
+            int quantity = (formatter.getNumberOfWords(sentence));
+            if (quantity >= 3 && quantity <= 5 || formatter.isPalindromeInString(sentence.split(" "))) {
                 System.out.println(sentence.trim());
             }
         }
