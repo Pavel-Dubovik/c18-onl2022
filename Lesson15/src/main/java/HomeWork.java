@@ -20,10 +20,10 @@ public class HomeWork {
                 String inputText = new String(buffer);
                 String[] array = inputText.split("\\s|\\n|\\d+");
                 for (String s : array) {
-                    String sLowerCase = s.toLowerCase().trim();
+                    String sLowerCase = s.trim();
                     StringBuilder stringBuilder = new StringBuilder(sLowerCase);
                     StringBuilder reverse = stringBuilder.reverse();
-                    if ((reverse.toString()).equals(sLowerCase) && s.length() > 0) {
+                    if ((reverse.toString()).equalsIgnoreCase(sLowerCase) && s.length() > 0) {
                         printStream.println(s);
                     }
                 }
@@ -52,7 +52,7 @@ public class HomeWork {
                 byte[] buffer = new byte[fis.available()];
                 fis.read(buffer);
                 String inputText = new String(buffer).replaceAll("-\\s+", "");
-                String[] sentences = inputText.split("[\\.\\!\\?]");
+                String[] sentences = inputText.split("[.!?]");
 
                 for (String sentence : sentences) {
                     int quantity = (formatter.getNumberOfWords(sentence));

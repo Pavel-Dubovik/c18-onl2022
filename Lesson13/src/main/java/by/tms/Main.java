@@ -1,7 +1,7 @@
 package by.tms;
 
-import by.tms.model.Employee;
 import by.tms.service.TextFormatter;
+import by.tms.task2practice.Employee;
 
 public class Main {
     public static void main(String[] args) {
