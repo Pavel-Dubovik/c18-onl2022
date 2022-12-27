@@ -1,4 +1,4 @@
-package by.tms.model;
+package by.tms.task2practice;
 
 public interface Reportable {
     String generateReport();
