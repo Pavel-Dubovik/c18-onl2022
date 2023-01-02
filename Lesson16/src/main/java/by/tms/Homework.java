@@ -44,15 +44,15 @@ public class Homework {
         System.out.println(armchair.getFrame());
         System.out.println(armchair.getMaterial());
         System.out.println(armchair.getLeg());
-        armchair.printClassName();
+        System.out.println(armchair.printClassName());
 
         System.out.println("\n\"Task 2\"\n");
 
-        Generic<String, Animal, Double> gen = new Generic<>("тест", new Animal("Балу", 3), 59.5);
-        System.out.println(gen.getT());
-        System.out.println(gen.getV());
-        System.out.println(gen.getK());
-        gen.printClassName();
+        Generic<String, Animal, Double> generic = new Generic<>("тест", new Animal("Балу", 3), 59.5);
+        System.out.println(generic.getT());
+        System.out.println(generic.getV());
+        System.out.println(generic.getK());
+        System.out.println(generic.printClassName());
 
         /**
          * 3) Написать обобщенный класс MinMax, который содержит методы для нахождения минимального и максимального элемента массива.
@@ -67,13 +67,11 @@ public class Homework {
 
         MinMax<?> minMaxInteger = new MinMax<>(arrayOfInteger);
         getInfo(minMaxInteger);
-        minMaxInteger.getMax();
-        minMaxInteger.getMin();
+        printMinAndMaxValue(minMaxInteger);
 
         MinMax<?> minMaxDouble = new MinMax<>(arrayOfDouble);
         getInfo(minMaxDouble);
-        minMaxDouble.getMax();
-        minMaxDouble.getMin();
+        printMinAndMaxValue(minMaxDouble);
 
         /**
          * 4) Написать класс Калькулятор (необобщенный), который содержит обобщенные статические методы - sum, multiply, divide,
@@ -107,5 +105,9 @@ public class Homework {
         for (int i = 0; i < minMax.getArrayOfNumbers().length; i++) {
             System.out.println(minMax.getArrayOfNumbers()[i]);
         }
+    }
+
+    private static void printMinAndMaxValue(MinMax<?> minMax) {
+        System.out.println("Min element: " + minMax.getMin() + "\n" + "Max element: " + minMax.getMax());
     }
 }
