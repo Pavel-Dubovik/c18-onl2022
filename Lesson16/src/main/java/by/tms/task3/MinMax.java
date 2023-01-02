@@ -19,14 +19,14 @@ public class MinMax<T extends Number> {
         this.arrayOfNumbers = array;
     }
 
-    public void getMax() {
+    public T getMax() {
         Arrays.sort(arrayOfNumbers);
-        System.out.println("Max element: " + arrayOfNumbers[arrayOfNumbers.length - 1]);
+        return arrayOfNumbers[arrayOfNumbers.length - 1];
     }
 
-    public void getMin() {
+    public T getMin() {
         Arrays.sort(arrayOfNumbers);
-        System.out.println("Min element: " + arrayOfNumbers[0]);
+        return arrayOfNumbers[0];
     }
 
     public T[] getArrayOfNumbers() {

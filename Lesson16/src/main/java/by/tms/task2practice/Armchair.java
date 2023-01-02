@@ -14,8 +14,8 @@ public class Armchair<T extends Frame, V extends Material, K extends Leg> {
         this.leg = leg;
     }
 
-    public void printClassName() {
-        System.out.println(frame.getClass().getName() + "\n" + material.getClass().getName() + "\n" + leg.getClass().getName());
+    public String printClassName() {
+        return String.format("%s\n%s\n%s", frame.getClass().getName(), material.getClass().getName(), leg.getClass().getName());
     }
 
     public T getFrame() {

@@ -13,8 +13,8 @@ public class Generic<T extends Comparable, V extends Animal & Serializable, K ex
         this.k = k;
     }
 
-    public void printClassName() {
-        System.out.println(t.getClass().getName() + "\n" + v.getClass().getName() + "\n" + k.getClass().getName());
+    public String printClassName() {
+        return String.format("%s\n%s\n%s", t.getClass().getName(), v.getClass().getName(), k.getClass().getName());
     }
 
     public T getT() {
