@@ -1,7 +1,7 @@
-package by.tms.task1;
+package by.tms.hw18.task1;
 
-import by.tms.task1.model.Car;
-import by.tms.task1.service.CarIsNotReadyException;
+import by.tms.hw18.task1.model.Car;
+import by.tms.hw18.task1.service.CarIsNotReadyException;
 
 public class Main {
     public static void main(String[] args) {

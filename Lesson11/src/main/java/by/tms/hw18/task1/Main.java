@@ -1,11 +1,9 @@
-package by.tms.task1;
+package by.tms.hw18.task1;
 
-import by.tms.task1.model.Drum;
-import by.tms.task1.model.Guitar;
-import by.tms.task1.model.IInstrument;
-import by.tms.task1.model.Pipe;
-
-import static by.tms.task1.model.IInstrument.Type.*;
+import by.tms.hw18.task1.model.Drum;
+import by.tms.hw18.task1.model.Guitar;
+import by.tms.hw18.task1.model.IInstrument;
+import by.tms.hw18.task1.model.Pipe;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +21,7 @@ public class Main {
          *       "Играет такой-то инструмент, с такими-то характеристиками".
          */
 
-        for (IInstrument iInstrument : createInstruments(GUITAR, DRUM, PIPE)) {
+        for (IInstrument iInstrument : createInstruments(IInstrument.Type.GUITAR, IInstrument.Type.DRUM, IInstrument.Type.PIPE)) {
             iInstrument.play();
             System.out.println();
         }
@@ -32,9 +30,9 @@ public class Main {
     public static IInstrument[] createInstruments(IInstrument.Type... types) {
         IInstrument[] instruments = new IInstrument[types.length];
         for (int i = 0; i < types.length; i++) {
-            if (types[i] == GUITAR) {
+            if (types[i] == IInstrument.Type.GUITAR) {
                 instruments[i] = new Guitar(6);
-            } else if (types[i] == DRUM) {
+            } else if (types[i] == IInstrument.Type.DRUM) {
                 instruments[i] = new Drum(50);
             } else {
                 instruments[i] = new Pipe(10);

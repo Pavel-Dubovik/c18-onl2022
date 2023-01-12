@@ -1,6 +1,6 @@
-package by.tms.task1.model;
+package by.tms.hw18.task1.model;
 
-import by.tms.task1.service.CarIsNotReadyException;
+import by.tms.hw18.task1.service.CarIsNotReadyException;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

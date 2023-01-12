@@ -10,9 +10,9 @@ public class Shop {
         this.productList = productList;
     }
 
-    public void addProduct(Product pr) {
-        if (!productList.contains(pr)) {
-            productList.add(pr);
+    public void addProduct(Product product) {
+        if (!productList.contains(product)) {
+            productList.add(product);
         }
     }
 
@@ -30,8 +30,12 @@ public class Shop {
         }
     }
 
-    public void editProduct(Product pr) {
-        productList.remove(productList.size() - 1);
-        productList.add(productList.size(), pr);
+    public void editProduct(Product product) {
+        for (Product item : productList) {
+            if (item.getId() == product.getId()) {
+                item.setName(product.getName());
+                item.setPrice(product.getPrice());
+            }
+        }
     }
 }
