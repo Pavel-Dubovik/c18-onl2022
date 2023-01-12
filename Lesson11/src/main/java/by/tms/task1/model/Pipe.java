@@ -1,4 +1,4 @@
-package by.tms.hw18.task1.model;
+package by.tms.task1.model;
 
 import lombok.Getter;
 

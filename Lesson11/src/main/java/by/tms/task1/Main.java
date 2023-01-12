@@ -1,9 +1,9 @@
-package by.tms.hw18.task1;
+package by.tms.task1;
 
-import by.tms.hw18.task1.model.Drum;
-import by.tms.hw18.task1.model.Guitar;
-import by.tms.hw18.task1.model.IInstrument;
-import by.tms.hw18.task1.model.Pipe;
+import by.tms.task1.model.Drum;
+import by.tms.task1.model.Guitar;
+import by.tms.task1.model.IInstrument;
+import by.tms.task1.model.Pipe;
 
 public class Main {
     public static void main(String[] args) {
