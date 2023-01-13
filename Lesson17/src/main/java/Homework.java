@@ -3,6 +3,8 @@ import by.tms.model.Shop;
 import by.tms.servise.ProductPriceComparator;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Homework {
     /**
@@ -67,7 +69,7 @@ public class Homework {
         Shop shop = new Shop(new ArrayList<>());
         Product apple = new Product(100, "Каштель", 5);
         Product apple1 = new Product(101, "Белый налив", 3);
-        Product tangerine = new Product(110, "Клементин", 6);
+        Product tangerine = new Product(110, "Конференция", 6);
         Product potato = new Product(120, "Манифест", 1);
 
         shop.addProduct(apple);
@@ -75,7 +77,7 @@ public class Homework {
         shop.addProduct(tangerine);
         shop.addProduct(potato);
 
-        ArrayList<Product> list = shop.getProductList();
+        List<Product> list = shop.getProductList();
         ProductPriceComparator priceComparator = new ProductPriceComparator();
         list.sort(priceComparator);
         for (Product product : list) {
@@ -85,13 +87,12 @@ public class Homework {
         System.out.println();
 
         shop.deleteProduct(101);
-        for (int i = list.size() - 1; i >= 0; i--) {
-            System.out.println(list.get(i));
-        }
+        Collections.reverse(list);
+        list.forEach(System.out::println);
 
         System.out.println();
 
-        shop.editProduct(new Product(130, "Дюшес", 6));
+        shop.editProduct(new Product(110, "Дюшес", 6));
         for (Product product : list) {
             System.out.println(product);
         }

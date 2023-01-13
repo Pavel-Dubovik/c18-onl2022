@@ -7,7 +7,7 @@ import java.io.Serializable;
 @ToString
 public class Animal implements Serializable {
     private String name;
-    int age;
+    private int age;
 
     public Animal(String name, int age) {
         this.name = name;
