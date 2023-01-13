@@ -5,6 +5,8 @@ import by.tms.task1.model.Guitar;
 import by.tms.task1.model.IInstrument;
 import by.tms.task1.model.Pipe;
 
+import static by.tms.task1.model.IInstrument.Type;
+
 public class Main {
     public static void main(String[] args) {
         /**
@@ -21,18 +23,18 @@ public class Main {
          *       "Играет такой-то инструмент, с такими-то характеристиками".
          */
 
-        for (IInstrument iInstrument : createInstruments(IInstrument.Type.GUITAR, IInstrument.Type.DRUM, IInstrument.Type.PIPE)) {
+        for (IInstrument iInstrument : createInstruments(Type.GUITAR, Type.DRUM, Type.PIPE)) {
             iInstrument.play();
             System.out.println();
         }
     }
 
-    public static IInstrument[] createInstruments(IInstrument.Type... types) {
+    public static IInstrument[] createInstruments(Type... types) {
         IInstrument[] instruments = new IInstrument[types.length];
         for (int i = 0; i < types.length; i++) {
-            if (types[i] == IInstrument.Type.GUITAR) {
+            if (types[i] == Type.GUITAR) {
                 instruments[i] = new Guitar(6);
-            } else if (types[i] == IInstrument.Type.DRUM) {
+            } else if (types[i] == Type.DRUM) {
                 instruments[i] = new Drum(50);
             } else {
                 instruments[i] = new Pipe(10);
