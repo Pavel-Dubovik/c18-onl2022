@@ -33,6 +33,12 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.12.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.1</version>
+        </dependency>
+
     </dependencies>
 
     <modules>
@@ -55,5 +61,6 @@
         <module>Lesson17</module>
         <module>Lesson18</module>
         <module>Lesson19</module>
+        <module>Lesson21</module>
     </modules>
 </project>
