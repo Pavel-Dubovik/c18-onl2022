@@ -31,7 +31,7 @@ public class Application {
         Student student11 = new Student("Никита", "Татарский", "Java developer");
         Student student12 = new Student("Максим", "Линник", "Java developer");
 
-        CRUDUtils.saveStudent(student1);
+        /*CRUDUtils.saveStudent(student1);
         CRUDUtils.saveStudent(student2);
         CRUDUtils.saveStudent(student3);
         CRUDUtils.saveStudent(student4);
@@ -42,10 +42,24 @@ public class Application {
         CRUDUtils.saveStudent(student9);
         CRUDUtils.saveStudent(student10);
         CRUDUtils.saveStudent(student11);
-        CRUDUtils.saveStudent(student12);
+        CRUDUtils.saveStudent(student12);*/
 
-        System.out.println(CRUDUtils.getAllStudents());
-        System.out.println(CRUDUtils.updateStudent(1, "Кройки и шитья"));
-        System.out.println(CRUDUtils.deleteStudent(7));
+//        System.out.println(CRUDUtils.getAllStudents());
+//        System.out.println(CRUDUtils.updateStudent(1, "Кройки и шитья"));
+//        System.out.println(CRUDUtils.deleteStudent(7));
+
+        /*CRUDUtils.saveCity("Минск", 1);
+        CRUDUtils.saveCity("Минск", 2);
+        CRUDUtils.saveCity("Минск", 3);
+        CRUDUtils.saveCity("Минск", 4);
+        CRUDUtils.saveCity("Минск", 5);
+        CRUDUtils.saveCity("Гродно", 6);
+        CRUDUtils.saveCity("Москва", 8);
+        CRUDUtils.saveCity("Витебск", 9);
+        CRUDUtils.saveCity("Гомель", 10);
+        CRUDUtils.saveCity("Могилев", 11);
+        CRUDUtils.saveCity("Брест", 12);*/
+
+        CRUDUtils.getAllStudentWithCities().forEach(System.out::println);
     }
 }
