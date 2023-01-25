@@ -14,7 +14,7 @@ public class Student {
     private String name;
     private String surname;
     private String course;
-    private String city;
+    private City city;
 
     public Student(String name, String surname, String course) {
         this.name = name;

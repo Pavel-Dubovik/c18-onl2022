@@ -48,17 +48,17 @@ public class Application {
 //        System.out.println(CRUDUtils.updateStudent(1, "Кройки и шитья"));
 //        System.out.println(CRUDUtils.deleteStudent(7));
 
-        /*CRUDUtils.saveCity("Минск", 1);
-        CRUDUtils.saveCity("Минск", 2);
-        CRUDUtils.saveCity("Минск", 3);
-        CRUDUtils.saveCity("Минск", 4);
-        CRUDUtils.saveCity("Минск", 5);
-        CRUDUtils.saveCity("Гродно", 6);
-        CRUDUtils.saveCity("Москва", 8);
-        CRUDUtils.saveCity("Витебск", 9);
-        CRUDUtils.saveCity("Гомель", 10);
-        CRUDUtils.saveCity("Могилев", 11);
-        CRUDUtils.saveCity("Брест", 12);*/
+        /*CRUDUtils.saveCity(1, "Минск");
+        CRUDUtils.saveCity(2, "Минск");
+        CRUDUtils.saveCity(3, "Минск");
+        CRUDUtils.saveCity(4, "Минск");
+        CRUDUtils.saveCity(5, "Минск");
+        CRUDUtils.saveCity(6, "Гродно");
+        CRUDUtils.saveCity(8, "Москва");
+        CRUDUtils.saveCity(9, "Витебск");
+        CRUDUtils.saveCity(10, "Гомель");
+        CRUDUtils.saveCity(11, "Могилев");
+        CRUDUtils.saveCity(12, "Брест");*/
 
         CRUDUtils.getAllStudentWithCities().forEach(System.out::println);
     }

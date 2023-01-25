@@ -1,5 +1,6 @@
 package hw21.utils;
 
+import hw21.model.City;
 import hw21.model.Student;
 import lombok.experimental.UtilityClass;
 
@@ -13,8 +14,8 @@ public class CRUDUtils {
     public static final String SELECT_ALL_STUDENTS_QUERY = "select * from students";
     public static final String UPDATE_STUDENT_QUERY = "update students set course = ? where id = ?";
     public static final String DELETE_STUDENT_QUERY = "delete from students where id = ?";
-    public static final String INSERT_CITY_QUERY = "insert into cities(student_id, city) values(?, ?)";
-    public static final String SELECT_ALL_STUDENTS_WITH_CITY_QUERY = "select * from students, cities where cities.student_id = students.id";
+    public static final String INSERT_CITY_QUERY = "insert into city(city_id, city_name) values(?, ?)";
+    public static final String SELECT_ALL_STUDENTS_WITH_CITY_QUERY = "select * from students left join city on city.city_id = students.id";
 
 
     public static List<Student> getAllStudents() {
@@ -84,12 +85,12 @@ public class CRUDUtils {
         return updateStudents;
     }
 
-    public static void saveCity(String city, int studentId) {
+    public static void saveCity(int city_id, String city_name) {
 
         try (Connection connection = DbUtils.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CITY_QUERY);
-            preparedStatement.setInt(1, studentId);
-            preparedStatement.setString(2, city);
+            preparedStatement.setInt(1, city_id);
+            preparedStatement.setString(2, city_name);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -107,10 +108,9 @@ public class CRUDUtils {
                 String name = resultSet.getString("name");
                 String surname = resultSet.getString("surname");
                 String course = resultSet.getString("course");
-                String city = resultSet.getString("city");
-                studentsWithCities.add(new Student(id, name, surname, course, city));
-
-
+                int cityId = resultSet.getInt("city_id");
+                String city = resultSet.getString("city_name");
+                studentsWithCities.add(new Student(id, name, surname, course, new City(cityId, city)));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
