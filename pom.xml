@@ -38,7 +38,6 @@
             <artifactId>postgresql</artifactId>
             <version>42.5.1</version>
         </dependency>
-
     </dependencies>
 
     <modules>
@@ -62,5 +61,6 @@
         <module>Lesson18</module>
         <module>Lesson19</module>
         <module>Lesson21</module>
+        <module>Lesson24</module>
     </modules>
 </project>
