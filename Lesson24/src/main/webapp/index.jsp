@@ -4,9 +4,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Index Page</title>
+    <title>by.tms.utils.Calculator</title>
 </head>
 <body>
-<p>Solution: ${solution}</p>
+<jsp:forward page="/calculator"/>
 </body>
 </html>
