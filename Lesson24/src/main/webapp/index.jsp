@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>by.tms.utils.Calculator</title>
+    <title>Calculator</title>
 </head>
 <body>
 <jsp:forward page="/calculator"/>
