@@ -15,13 +15,9 @@ public class DbUtils {
     public static Connection getConnection() {
         Connection connection = null;
         try {
-            try {
-                Class.forName("org.postgresql.Driver");
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
+            Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             System.out.println("Exception " + e.getMessage());
         }
         return connection;
