@@ -1,6 +1,7 @@
 package task3;
 
 public class Task3Main {
+
     /**
      * * Дополнительное задание
      * 3. Создать обобщенный функциональный интерфейс.
@@ -13,6 +14,7 @@ public class Task3Main {
      * целочисленным типом и передать в метод интерфейса логику
      * нахождения факториала числа.
      */
+
     public static void main(String[] args) {
         Servise servise = new Servise();
         try {

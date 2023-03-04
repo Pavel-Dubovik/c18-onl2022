@@ -5,7 +5,7 @@ import by.tms.model.Student;
 import java.util.List;
 
 public interface StudentRepository {
-    List<Student> findStudent();
+    List<Student> findStudents();
 
     void addStudent(Student student);
 

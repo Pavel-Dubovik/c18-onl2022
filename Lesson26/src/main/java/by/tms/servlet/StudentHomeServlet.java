@@ -9,9 +9,9 @@ import java.io.IOException;
 
 @WebServlet("/studentHome")
 public class StudentHomeServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
         request.getRequestDispatcher("/studentHome.jsp").forward(request, response);
     }
 }

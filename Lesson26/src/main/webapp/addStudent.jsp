@@ -3,21 +3,39 @@
 
 <html>
 <head>
-  <title>Add student</title>
+    <title>Add student</title>
+    <link rel="stylesheet" href="form2-styles.css" type="text/css">
 </head>
 <body>
-<form method="post" action="addStudent" accept-charset="UTF-8">
-  Enter name:<input type="text" name="name"/><br>
-  Enter surname:<input type="text" name="surname"/><br>
-  Enter course:<input type="text" name="course"/><br>
-  Enter city:<input type="text" name="city"/><br>
-  <br>
-  <input type="submit" value="Add student">
+<form method="post" action="addStudent">
+    <div class="form">
+        <div class="title">Add student</div>
+        <div class="input-container ic1">
+            <input id="firstname" class="input" type="text" placeholder=" " name="name"/>
+            <div class="cut"></div>
+            <label for="firstname" class="placeholder">First name</label>
+        </div>
+        <div class="input-container ic2">
+            <input id="lastname" class="input" type="text" placeholder=" " name="surname"/>
+            <div class="cut"></div>
+            <label for="lastname" class="placeholder">Last name</label>
+        </div>
+        <div class="input-container ic2">
+            <input id="course" class="input" type="text" placeholder=" " name="course"/>
+            <div class="cut cut-short"></div>
+            <label for="course" class="placeholder">Course</label>
+        </div>
+        <div class="input-container ic2">
+            <input id="city" class="input" type="text" placeholder=" " name="city"/>
+            <div class="cut cut-short"></div>
+            <label for="city" class="placeholder">City</label>
+        </div>
+
+        <button type="text" class="submit">Add student</button>
+        <button type="text" class="submit">
+            <a href="<c:url value="/studentHome"/>">Return</a>
+        </button>
+    </div>
 </form>
-<div>
-  <a href="<c:url value="/studentHome"/>">
-    <span>Return</span>
-  </a>
-</div>
 </body>
 </html>

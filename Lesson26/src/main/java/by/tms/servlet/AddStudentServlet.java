@@ -14,6 +14,7 @@ import java.io.IOException;
 
 @WebServlet("/addStudent")
 public class AddStudentServlet extends HttpServlet {
+
     private StudentService studentService;
 
     @Override
@@ -29,15 +30,14 @@ public class AddStudentServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
         String course = request.getParameter("course");
         String city = request.getParameter("city");
 
-        studentService.addStudent(new Student(name, surname, course, new City(city)));
+        if (city != null) {
+            studentService.addStudent(new Student(name, surname, course, new City(city)));
+        }
         response.sendRedirect("/addStudent");
-
     }
 }

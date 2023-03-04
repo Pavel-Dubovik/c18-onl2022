@@ -13,14 +13,14 @@ public class JdbcStudentRepository implements StudentRepository {
     public static final String INSERT_STUDENT_QUERY = "insert into students(name, surname, course, city_id) VALUES(?, ?, ?, ?)";
     public static final String INSERT_STUDENT_CITY_QUERY = "insert into city(city_name) VALUES(?) RETURNING id";
     public static final String DELETE_STUDENT_QUERY = "delete from students where id = ?";
-
+    public static final String SELECT_CITY_QUERY = "select * from city where city_name = ?";
 
     public JdbcStudentRepository(Connection connection) {
         this.connection = connection;
     }
 
     @Override
-    public List<Student> findStudent() {
+    public List<Student> findStudents() {
         List<Student> studentsWithCities = new ArrayList<>();
 
         try {
@@ -44,21 +44,28 @@ public class JdbcStudentRepository implements StudentRepository {
     @Override
     public void addStudent(Student student) {
         try {
-            PreparedStatement statement = connection.prepareStatement(INSERT_STUDENT_CITY_QUERY);
+            PreparedStatement statement = connection.prepareStatement(SELECT_CITY_QUERY);
             statement.setString(1, student.getCity().getName());
             ResultSet resultSet = statement.executeQuery();
+            String cityName = null;
+            int cityId = 0;
             while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-
-                PreparedStatement preparedStatement = connection.prepareStatement(INSERT_STUDENT_QUERY);
-                preparedStatement.setString(1, student.getName());
-                preparedStatement.setString(2, student.getSurname());
-                preparedStatement.setString(3, student.getCourse());
-                preparedStatement.setInt(4, id);
-                preparedStatement.executeUpdate();
+                cityName = resultSet.getString("city_name");
+                cityId = resultSet.getInt("id");
+            }
+            if (cityName != null) {
+                insertStudentData(student, cityId);
+            } else {
+                PreparedStatement statement1 = connection.prepareStatement(INSERT_STUDENT_CITY_QUERY);
+                statement1.setString(1, student.getCity().getName());
+                ResultSet resultSet1 = statement1.executeQuery();
+                while (resultSet1.next()) {
+                    cityId = resultSet1.getInt("id");
+                }
+                insertStudentData(student, cityId);
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Exceeption: " + e.getMessage());
         }
     }
 
@@ -68,6 +75,19 @@ public class JdbcStudentRepository implements StudentRepository {
             preparedStatement.setInt(1, id);
             preparedStatement.execute();
 
+        } catch (SQLException e) {
+            System.out.println("Exception " + e.getMessage());
+        }
+    }
+
+    public void insertStudentData(Student student, int cityId) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_STUDENT_QUERY);
+            preparedStatement.setString(1, student.getName());
+            preparedStatement.setString(2, student.getSurname());
+            preparedStatement.setString(3, student.getCourse());
+            preparedStatement.setInt(4, cityId);
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Exception " + e.getMessage());
         }

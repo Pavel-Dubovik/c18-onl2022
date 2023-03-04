@@ -1,6 +1,5 @@
 package by.tms;
 
-
 import by.tms.task2hw.Animal;
 import by.tms.task2hw.Generic;
 import by.tms.task2practice.*;
@@ -10,13 +9,7 @@ import by.tms.task4.Calculator;
 import java.io.File;
 
 public class Homework {
-    /**
-     * <p>
-     *
-     * <p>
-     *
-     * <p>
-     */
+
     public static void main(String[] args) {
         /**
          * 1) Список каталога

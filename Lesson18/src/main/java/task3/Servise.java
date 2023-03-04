@@ -3,6 +3,7 @@ package task3;
 import java.util.Scanner;
 
 public class Servise {
+
     private final Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 
     public Object getValue() {
