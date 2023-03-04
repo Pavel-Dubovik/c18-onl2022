@@ -10,14 +10,7 @@
     <packaging>war</packaging>
     <name>Lesson25 Maven Webapp</name>
     <url>http://maven.apache.org</url>
-    <dependencies>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
+
     <build>
         <finalName>Lesson25</finalName>
     </build>

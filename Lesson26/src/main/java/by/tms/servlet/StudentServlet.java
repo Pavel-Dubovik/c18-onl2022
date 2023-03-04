@@ -28,7 +28,7 @@ public class StudentServlet extends HttpServlet {
             HttpServletRequest req,
             HttpServletResponse resp
     ) throws IOException, ServletException {
-        List<Student> students = studentService.findStudent();
+        List<Student> students = studentService.findStudents();
         req.setAttribute("students", students);
         getServletContext().getRequestDispatcher("/students.jsp").forward(req, resp);
     }

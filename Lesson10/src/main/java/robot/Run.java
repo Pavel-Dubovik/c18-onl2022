@@ -12,6 +12,7 @@ import robot.legs.ToshibaLeg;
 
 public class Run {
     public static void main(String[] args) {
+
         /**
          *  Создать по 3 реализации(Sony, Toshiba, Samsung) каждой запчасти(IHead, IHand, ILeg)
          *          Класс SonyHead является примером реализацией головы от Sony.
@@ -26,7 +27,6 @@ public class Run {
         System.out.println(robot1.getPrice());
         System.out.println("--------------------------------------------------");
 
-
         Robot robot2 = new Robot(new SonyHead(2100), new SamsungHand(1000), new ToshibaLeg(400));
         robot2.action();
         System.out.println(robot2.getPrice());
@@ -39,7 +39,6 @@ public class Run {
 
         System.out.println("Максимальная стоимость робота = " + Math.max(robot1.getPrice(), Math.max(robot2.getPrice(), robot3.getPrice())));
         System.out.println(getRobotWithMaxPrice(robot1, robot2, robot3));
-
     }
 
     public static IRobot getRobotWithMaxPrice(IRobot... robots) {
@@ -58,6 +57,4 @@ public class Run {
         }
         return robotWithMaxPrice;
     }
-
-
 }

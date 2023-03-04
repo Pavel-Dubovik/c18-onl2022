@@ -12,8 +12,8 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
-    public List<Student> findStudent() {
-        return studentRepository.findStudent();
+    public List<Student> findStudents() {
+        return studentRepository.findStudents();
     }
 
     public void addStudent(Student student) {

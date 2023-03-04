@@ -1,6 +1,5 @@
 package robot;
 
-
 import lombok.ToString;
 import robot.hands.IHand;
 import robot.heads.IHead;
@@ -62,6 +61,4 @@ public class Robot implements IRobot {
         int price = head.getPrice() + hand.getPrice() + leg.getPrice();
         return price;
     }
-
-
 }

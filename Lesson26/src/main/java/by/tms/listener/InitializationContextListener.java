@@ -28,7 +28,7 @@ public class InitializationContextListener implements ServletContextListener {
             sce.getServletContext().setAttribute("userService", userService);
             sce.getServletContext().setAttribute("connection", connection);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println("Not connection " + e.getMessage());
         }
     }
 
