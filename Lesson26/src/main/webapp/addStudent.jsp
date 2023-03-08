@@ -30,11 +30,8 @@
             <div class="cut cut-short"></div>
             <label for="city" class="placeholder">City</label>
         </div>
-
         <button type="text" class="submit">Add student</button>
-        <button type="text" class="submit">
-            <a href="<c:url value="/studentHome"/>">Return</a>
-        </button>
+        <a href="<c:url value="/studentHome"/>" class="submit">Return</a>
     </div>
 </form>
 </body>

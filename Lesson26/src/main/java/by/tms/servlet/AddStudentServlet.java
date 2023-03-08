@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static org.apache.commons.lang3.StringUtils.isNotEmpty;
+
 @WebServlet("/addStudent")
 public class AddStudentServlet extends HttpServlet {
 
@@ -35,7 +37,7 @@ public class AddStudentServlet extends HttpServlet {
         String course = request.getParameter("course");
         String city = request.getParameter("city");
 
-        if (city != null) {
+        if (isNotEmpty(name) || isNotEmpty(surname) || isNotEmpty(course) || isNotEmpty(city)) {
             studentService.addStudent(new Student(name, surname, course, new City(city)));
         }
         response.sendRedirect("/addStudent");

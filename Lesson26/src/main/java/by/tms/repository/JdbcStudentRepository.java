@@ -2,13 +2,14 @@ package by.tms.repository;
 
 import by.tms.model.City;
 import by.tms.model.Student;
+import by.tms.service.CityService;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class JdbcStudentRepository implements StudentRepository {
-    private final Connection connection;
+    private Connection connection;
     public static final String SELECT_ALL_STUDENTS_QUERY = "select * from students left join city on city.id = students.city_id";
     public static final String INSERT_STUDENT_QUERY = "insert into students(name, surname, course, city_id) VALUES(?, ?, ?, ?)";
     public static final String INSERT_STUDENT_CITY_QUERY = "insert into city(city_name) VALUES(?) RETURNING id";
@@ -44,6 +45,29 @@ public class JdbcStudentRepository implements StudentRepository {
     @Override
     public void addStudent(Student student) {
         try {
+            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_STUDENT_QUERY);
+            preparedStatement.setString(1, student.getName());
+            preparedStatement.setString(2, student.getSurname());
+            preparedStatement.setString(3, student.getCourse());
+            CityService cityService = new CityService(connection);
+            String cityName = student.getCity().getName();
+            int cityId = 0;
+            if (cityService.isThereACity(cityName)) {
+                cityId = cityService.getCityIdByName(cityName);
+            } else {
+                cityService.addCity(cityName);
+                cityId = cityService.getCityIdByName(cityName);
+            }
+            preparedStatement.setInt(4, cityId);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Exception " + e.getMessage());
+        }
+    }
+
+    /*@Override
+    public void addStudent(Student student) {
+        try {
             PreparedStatement statement = connection.prepareStatement(SELECT_CITY_QUERY);
             statement.setString(1, student.getCity().getName());
             ResultSet resultSet = statement.executeQuery();
@@ -67,7 +91,7 @@ public class JdbcStudentRepository implements StudentRepository {
         } catch (SQLException e) {
             System.out.println("Exceeption: " + e.getMessage());
         }
-    }
+    }*/
 
     public void deleteStudent(Integer id) {
         try {
@@ -75,19 +99,6 @@ public class JdbcStudentRepository implements StudentRepository {
             preparedStatement.setInt(1, id);
             preparedStatement.execute();
 
-        } catch (SQLException e) {
-            System.out.println("Exception " + e.getMessage());
-        }
-    }
-
-    public void insertStudentData(Student student, int cityId) {
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_STUDENT_QUERY);
-            preparedStatement.setString(1, student.getName());
-            preparedStatement.setString(2, student.getSurname());
-            preparedStatement.setString(3, student.getCourse());
-            preparedStatement.setInt(4, cityId);
-            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Exception " + e.getMessage());
         }
