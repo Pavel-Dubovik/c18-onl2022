@@ -10,7 +10,7 @@ body {
     background-color: #15172b;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 580px;
+    height: 560px;
     padding: 20px;
     width: 320px;
 }
@@ -115,43 +115,18 @@ body {
     background-color: #06b;
 }
 
-.button {
-    text-decoration: none;
-    display: inline-block;
-    width: 240px;
-    height: 45px;
-    line-height: 45px;
-    border-radius: 45px;
-    margin: 10px 20px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 3px;
-    font-weight: 600;
-    color: #524f4e;
-    background: white;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
-    transition: .3s;
-}
+.btn {
+    display: inline-block; /* Строчно-блочный элемент */
+    background: #08d; /* Серый цвет фона */
+    color: #eee; /* Белый цвет текста */
+    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 12px; /* Скругляем уголки */
 
-/*.button:active {
-    background-color: #06b;
-}*/
-/*.button {
-    display: block;
+    box-sizing: border-box;
     text-align: center;
-    background-color: royalblue;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 1.4;
-    padding: 8px;
-    width: 300px;
-    text-decoration: none;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}*/
+    font-size: 18px;
+    height: 50px;
+    margin-top: 20px;
+    width: 100%;
+}

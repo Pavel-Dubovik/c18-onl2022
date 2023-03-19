@@ -31,7 +31,7 @@
             <label for="city" class="placeholder">City</label>
         </div>
         <button type="text" class="submit">Add student</button>
-        <a href="<c:url value="/studentHome"/>" class="submit">Return</a>
+        <a href="<c:url value="/studentHome"/>" class="btn">Return</a>
     </div>
 </form>
 </body>
