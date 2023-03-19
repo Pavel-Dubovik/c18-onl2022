@@ -157,6 +157,8 @@
         <module>Lesson26</module>
         <module>Lesson25</module>
         <module>Lesson28hw</module>
+        <module>Lesson28DemoStore</module>
+        <module>Lesson28DSConnectionPool</module>
         <module>Lesson31Patterns</module>
     </modules>
 </project>
