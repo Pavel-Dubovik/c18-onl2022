@@ -19,7 +19,8 @@ VALUES (4, 'Fridges', 'fridge.jpg');
 INSERT INTO categories (id, name, imageName)
 VALUES (5, 'Cars', 'car.jpg');
 INSERT INTO categories (id, name, imageName)
-VALUES (6, 'Cameras', 'camera.jpg')
+VALUES (6, 'Cameras', 'camera.jpg');
+
 
 --------------------------------------------------------
 --  ddl for table products

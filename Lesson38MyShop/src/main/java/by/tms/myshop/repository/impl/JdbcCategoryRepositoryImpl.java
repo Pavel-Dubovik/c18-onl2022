@@ -3,12 +3,14 @@ package by.tms.myshop.repository.impl;
 import by.tms.myshop.model.Category;
 import by.tms.myshop.repository.CategoryRepository;
 import by.tms.myshop.repository.utils.ConnectionWrapper;
+import lombok.extern.slf4j.Slf4j;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 public class JdbcCategoryRepositoryImpl implements CategoryRepository {
 
     @Override
@@ -28,8 +30,7 @@ public class JdbcCategoryRepositoryImpl implements CategoryRepository {
                 }
             }
         } catch (Exception e) {
-            System.out.println("Unexpected error " + e.getMessage());
-
+            log.error("Unexpected error", e);
         }
         return categories;
     }

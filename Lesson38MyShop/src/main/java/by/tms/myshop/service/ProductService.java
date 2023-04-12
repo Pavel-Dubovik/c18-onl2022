@@ -1,10 +1,10 @@
-package by.tms.myshop.repository;
+package by.tms.myshop.service;
 
 import by.tms.myshop.model.Product;
 
 import java.util.List;
 
-public interface ProductRepository extends BaseRepository {
+public interface ProductService {
 
     List<Product> getProducts();
 
