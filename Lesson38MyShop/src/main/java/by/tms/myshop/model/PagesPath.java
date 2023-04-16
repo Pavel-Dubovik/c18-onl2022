@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum PagePath {
+public enum PagesPath {
 
     SIGN_IN_PAGE_PATH("signin.jsp"),
     HOME_PAGE_PATH("home.jsp"),
@@ -15,5 +15,5 @@ public enum PagePath {
     CART_PAGE_PATH("cart.jsp"),
     CART_CONTROLLER_PATH("/eshop?command=cart-get");
 
-    private final String PATH;
+    private final String path;
 }

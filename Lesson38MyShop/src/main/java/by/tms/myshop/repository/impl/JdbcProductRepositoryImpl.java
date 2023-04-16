@@ -2,19 +2,19 @@ package by.tms.myshop.repository.impl;
 
 import by.tms.myshop.model.Product;
 import by.tms.myshop.repository.ProductRepository;
-import by.tms.myshop.repository.utils.ConnectionPool;
 import by.tms.myshop.repository.utils.ConnectionWrapper;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
+@Component
 public class JdbcProductRepositoryImpl implements ProductRepository {
 
     private static final String SELECT_ALL_PRODUCTS_QUERY = "select id, name, description, price, image_path, category_id from products";
