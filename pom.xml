@@ -18,6 +18,10 @@
         <checkstyle.version>10.7.0</checkstyle.version>
         <pmd.maven.plugin.version>3.14.0</pmd.maven.plugin.version>
         <pmd.version>6.53.0</pmd.version>
+
+        <spring-core.version>6.0.7</spring-core.version>
+        <spring-beans.version>6.0.7</spring-beans.version>
+        <spring-context.version>6.0.7</spring-context.version>
     </properties>
 
     <dependencies>
@@ -53,6 +57,39 @@
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.4.6</version>
+        </dependency>
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>7.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring-beans.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring-core.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
         </dependency>
     </dependencies>
 
@@ -129,6 +166,7 @@
                 </executions>
             </plugin>
         </plugins>
+        <defaultGoal>clean package</defaultGoal>
     </build>
 
     <modules>
@@ -156,9 +194,9 @@
         <module>Lesson24students</module>
         <module>Lesson26</module>
         <module>Lesson25</module>
-        <module>Lesson28hw</module>
         <module>Lesson28DemoStore</module>
         <module>Lesson28DSConnectionPool</module>
         <module>Lesson31Patterns</module>
+        <module>Lesson38MyShop</module>
     </modules>
 </project>
