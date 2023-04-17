@@ -1,0 +1,14 @@
+public static void createAndInjectInstanses(Object object) throws Exception {
+        for (Field declaredField : object.getClass().getDeclaredFields()) {
+            Inject injectField = declaredField.getAnnotation(Inject.class);
+            if (injectField != null) {
+                Object service = putInstanceToMapIfAbsent(declaredField.getType());// create and insert service implementations in the map
+                Method injectMethod = getInjectMethod(object, declaredField.getType());//find setter
+                injectMethod.invoke(object/*HomeController*/, service/*CategoryServiceImpl*/);
+                //Параметры: object - объект, у которого есть метод set, найденный методом getInjectMethod,
+                //service - это объект, который мы передаем в setter CategoryService, тем самым инициализируем CategoryServiceImpl.
+                //Т.е. в классе HomeController в поле categoryService инициализируется CategoryServiceImpl
+                createAndInjectInstanses(service);
+            }
+        }
+    }

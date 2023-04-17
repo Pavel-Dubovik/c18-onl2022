@@ -1,29 +1,25 @@
-package by.tms.myshop.controllers;
+package by.teachmeskills.eshop.controllers;
 
-import by.tms.myshop.model.Cart;
-import by.tms.myshop.model.Category;
-import by.tms.myshop.model.PagesPath;
-import by.tms.myshop.model.User;
-import by.tms.myshop.service.CategoryService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
+import by.teachmeskills.eshop.model.Cart;
+import by.teachmeskills.eshop.model.Category;
+import by.teachmeskills.eshop.model.Inject;
+import by.teachmeskills.eshop.model.PagesPath;
+import by.teachmeskills.eshop.model.User;
+import by.teachmeskills.eshop.service.CategoryService;
+import lombok.Setter;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-import static by.tms.myshop.model.PagesPath.HOME_PAGE_PATH;
-import static by.tms.myshop.model.PagesPath.SIGN_IN_PAGE_PATH;
-import static by.tms.myshop.utils.Constants.HOME_COMMAND;
-import static by.tms.myshop.utils.HttpRequestParamValidator.validateParamNotNull;
-import static by.tms.myshop.utils.Utils.isUserLogIn;
+import static by.teachmeskills.eshop.model.PagesPath.HOME_PAGE_PATH;
+import static by.teachmeskills.eshop.model.PagesPath.SIGN_IN_PAGE_PATH;
+import static by.teachmeskills.eshop.utils.HttpRequestParamValidator.validateParamNotNull;
+import static by.teachmeskills.eshop.utils.Utils.isUserLogIn;
 
-@RequiredArgsConstructor
-@Controller(HOME_COMMAND)
+@Setter
 public class HomeController implements BaseCommandController {
-
-    /*@Resource
-    @Qualifier("categoryServiceImpl")*/
-    private final CategoryService categoryService;
+    @Inject
+    private CategoryService categoryService;
 
     @Override
     public PagesPath execute(HttpServletRequest request) throws Exception {
@@ -35,7 +31,7 @@ public class HomeController implements BaseCommandController {
         Cart cart = new Cart();
         request.getSession().setAttribute("cart", cart);
         request.getSession().setAttribute("user", user);
-        return checkReceivedUser(user, request);
+        return checkReceivedUser(user,request);
     }
 
     private PagesPath checkReceivedUser(User user, HttpServletRequest request) {

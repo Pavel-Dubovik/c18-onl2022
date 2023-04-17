@@ -4,7 +4,7 @@ import by.tms.myshop.model.Category;
 import by.tms.myshop.repository.CategoryRepository;
 import by.tms.myshop.repository.utils.ConnectionWrapper;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-@Component
+@Repository
 public class JdbcCategoryRepositoryImpl implements CategoryRepository {
 
     public static final String SELECT_ALL_CATEGORIES_QUERY = "select id, name, imagename from categories";
