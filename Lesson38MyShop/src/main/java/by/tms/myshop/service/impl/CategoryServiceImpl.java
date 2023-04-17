@@ -12,8 +12,6 @@ import java.util.List;
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
-    /*@Resource
-    @Qualifier("jdbcCategoryRepositoryImpl")*/
     private final CategoryRepository categoryRepository;
 
     @Override

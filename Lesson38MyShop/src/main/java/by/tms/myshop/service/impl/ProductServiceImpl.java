@@ -3,18 +3,16 @@ package by.tms.myshop.service.impl;
 import by.tms.myshop.model.Product;
 import by.tms.myshop.repository.impl.JdbcProductRepositoryImpl;
 import by.tms.myshop.service.ProductService;
-import org.springframework.beans.factory.annotation.Qualifier;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
+@RequiredArgsConstructor
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    @Resource
-    @Qualifier("jdbcProductRepositoryImpl")
-    private JdbcProductRepositoryImpl jdbcProductRepository;
+    private final JdbcProductRepositoryImpl jdbcProductRepository;
 
     @Override
     public List<Product> getProducts() {

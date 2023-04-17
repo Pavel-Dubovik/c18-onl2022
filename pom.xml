@@ -197,6 +197,7 @@
         <module>Lesson28DemoStore</module>
         <module>Lesson28DSConnectionPool</module>
         <module>Lesson31Patterns</module>
+        <module>Lesson35DSAnnotations</module>
         <module>Lesson38MyShop</module>
     </modules>
 </project>

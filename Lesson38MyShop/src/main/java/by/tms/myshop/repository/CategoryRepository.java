@@ -4,7 +4,7 @@ import by.tms.myshop.model.Category;
 
 import java.util.List;
 
-public interface CategoryRepository extends BaseRepository {
+public interface CategoryRepository {
 
     List<Category> getCategories();
 }

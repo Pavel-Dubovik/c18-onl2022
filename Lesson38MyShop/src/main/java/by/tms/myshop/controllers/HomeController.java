@@ -21,8 +21,6 @@ import static by.tms.myshop.utils.Utils.isUserLogIn;
 @Controller(HOME_COMMAND)
 public class HomeController implements BaseCommandController {
 
-    /*@Resource
-    @Qualifier("categoryServiceImpl")*/
     private final CategoryService categoryService;
 
     @Override

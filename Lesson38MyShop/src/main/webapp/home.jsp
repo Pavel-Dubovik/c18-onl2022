@@ -9,7 +9,6 @@
 <body>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <jsp:include page="header.jsp"/>
-<%--<%@include file="header.jsp"%>--%>
 <br>
 <h2>Popular categories</h2>
 <div class="container-fluid">

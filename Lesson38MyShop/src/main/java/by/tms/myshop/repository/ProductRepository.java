@@ -4,7 +4,7 @@ import by.tms.myshop.model.Product;
 
 import java.util.List;
 
-public interface ProductRepository extends BaseRepository {
+public interface ProductRepository {
 
     List<Product> getProducts();
 

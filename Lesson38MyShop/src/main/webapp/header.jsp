@@ -8,7 +8,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <ul>
     <li><a class="active" href='${contextPath}/my-shop?command=home'><i class="fa fa-fw fa-home"></i> Главная</a></li>
-    <li style="float:right"><a href='${contextPath}/cart'><i class="fa fa-fw fa-shopping-cart"></i> Корзина</a></li>
+    <li style="float:right"><a href='${contextPath}/my-shop?command=cart'><i class="fa fa-fw fa-shopping-cart"></i> Корзина</a></li>
     <li style="float:right"><a href='profile.jsp'><i class="fa fa-fw fa-user"></i> Пользователь</a></li>
 </ul>
 </body>
