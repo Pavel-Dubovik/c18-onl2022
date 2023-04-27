@@ -19,9 +19,9 @@
         <pmd.maven.plugin.version>3.14.0</pmd.maven.plugin.version>
         <pmd.version>6.53.0</pmd.version>
 
-        <spring-core.version>6.0.7</spring-core.version>
-        <spring-beans.version>6.0.7</spring-beans.version>
-        <spring-context.version>6.0.7</spring-context.version>
+        <spring-core.version>5.3.26</spring-core.version>
+        <spring-beans.version>5.3.26</spring-beans.version>
+        <spring-context.version>5.3.26</spring-context.version>
     </properties>
 
     <dependencies>
@@ -57,6 +57,13 @@
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.1</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>

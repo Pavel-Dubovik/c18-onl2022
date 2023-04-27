@@ -1,22 +1,19 @@
-package by.teachmeskills.eshop.model;
+package by.tms.myshop.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public enum PagesPath {
 
     SIGN_IN_PAGE_PATH("signin.jsp"),
     HOME_PAGE_PATH("home.jsp"),
     CATEGORY_PAGE_PATH("category.jsp"),
     PRODUCT_PAGE_PATH("product.jsp"),
-    PRODUCT_CONTROLLER_PATH("/my-shop?command=product&productId=product.getId()"),
+    //    PRODUCT_CONTROLLER_PATH("/my-shop?command=product"),
     CART_PAGE_PATH("cart.jsp"),
     CART_CONTROLLER_PATH("/my-shop?command=cart-get");
 
     private final String path;
-
-    PagesPath(String path) {
-        this.path = path;
-    }
-
-    public String getPath() {
-        return path;
-    }
 }

@@ -2,7 +2,6 @@ package by.tms.myshop.repository.utils;
 
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PreDestroy;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -86,7 +85,6 @@ public class ConnectionPool {
         }
     }
 
-    @PreDestroy
     public void closeAllConnection() {
         for (ConnectionWrapper connectionWrapper : pool) {
             try {
