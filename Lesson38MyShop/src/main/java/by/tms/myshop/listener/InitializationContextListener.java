@@ -1,7 +1,6 @@
 package by.tms.myshop.listener;
 
 import by.tms.myshop.config.MyShopConfig;
-import by.tms.myshop.repository.utils.ConnectionPool;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -16,10 +15,5 @@ public class InitializationContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MyShopConfig.class);
         sce.getServletContext().setAttribute("appContext", applicationContext);
-    }
-
-    @Override
-    public void contextDestroyed(ServletContextEvent sce) {
-        ConnectionPool.getInstance().closeAllConnection();
     }
 }

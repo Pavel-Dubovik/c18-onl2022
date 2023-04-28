@@ -1,5 +1,8 @@
 package by.tms.myshop.repository.utils;
 
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PreDestroy;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -7,12 +10,9 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Component
 public class ConnectionPool {
 
-    //Singleton instance
-    private static volatile ConnectionPool instance;
-
-    //Configuration properties
     private static final String DB_PROPERTY_FILE = "application";
     private static final String DB_URL = "db.url";
     private static final String DB_LOGIN = "db.login";
@@ -37,19 +37,6 @@ public class ConnectionPool {
     private final AtomicInteger currentConnectionNumber = new AtomicInteger(MIN_CONNECTION_COUNT);
     private final BlockingQueue<ConnectionWrapper> pool = new ArrayBlockingQueue<>(MAX_CONNECTION_COUNT, true);
 
-    //Singleton
-    public static ConnectionPool getInstance() {
-        if (instance == null) {
-            synchronized (ConnectionPool.class) {
-                if (instance == null) {
-                    instance = new ConnectionPool();
-                }
-            }
-        }
-        return instance;
-    }
-
-    //Add new connection to queue in constructor
     private ConnectionPool() {
         for (int i = 0; i < MIN_CONNECTION_COUNT; i++) {
             try {
@@ -99,6 +86,7 @@ public class ConnectionPool {
         }
     }
 
+    @PreDestroy
     public void closeAllConnection() {
         for (ConnectionWrapper connectionWrapper : pool) {
             try {

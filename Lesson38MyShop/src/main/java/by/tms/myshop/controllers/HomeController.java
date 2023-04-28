@@ -21,8 +21,6 @@ import static by.tms.myshop.utils.Utils.isUserLogIn;
 @Controller(HOME_COMMAND)
 public class HomeController implements BaseCommandController {
 
-    /*@Resource
-    @Qualifier("categoryServiceImpl")*/
     private final CategoryService categoryService;
 
     @Override
@@ -42,6 +40,7 @@ public class HomeController implements BaseCommandController {
         if (isUserLogIn(user)) {
             List<Category> categories = categoryService.getCategories();
             request.setAttribute("categories", categories);
+            request.setAttribute("categoryName", "Привет");
             return HOME_PAGE_PATH;
         } else {
             return SIGN_IN_PAGE_PATH;

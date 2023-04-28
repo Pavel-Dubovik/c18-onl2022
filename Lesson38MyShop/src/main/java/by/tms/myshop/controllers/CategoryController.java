@@ -4,10 +4,8 @@ import by.tms.myshop.model.PagesPath;
 import by.tms.myshop.model.Product;
 import by.tms.myshop.model.User;
 import by.tms.myshop.service.ProductService;
-import org.springframework.beans.factory.annotation.Qualifier;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -16,12 +14,11 @@ import static by.tms.myshop.model.PagesPath.SIGN_IN_PAGE_PATH;
 import static by.tms.myshop.utils.Constants.CATEGORY_COMMAND;
 import static by.tms.myshop.utils.Utils.isUserLogIn;
 
+@RequiredArgsConstructor
 @Controller(CATEGORY_COMMAND)
 public class CategoryController implements BaseCommandController {
 
-    @Resource
-    @Qualifier("productServiceImpl")
-    private ProductService productService;
+    private final ProductService productService;
 
     @Override
     public PagesPath execute(HttpServletRequest request) throws Exception {
