@@ -13,12 +13,11 @@ import java.util.List;
 
 import static by.tms.myshop.model.PagesPath.HOME_PAGE_PATH;
 import static by.tms.myshop.model.PagesPath.SIGN_IN_PAGE_PATH;
-import static by.tms.myshop.utils.Constants.HOME_COMMAND_POST;
 import static by.tms.myshop.utils.HttpRequestParamValidator.validateParamNotNull;
 import static by.tms.myshop.utils.Utils.isUserLogIn;
 
 @RequiredArgsConstructor
-@Controller(HOME_COMMAND_POST)
+@Controller
 public class HomeControllerDoPost implements BaseCommandController {
 
     private final CategoryService categoryService;
